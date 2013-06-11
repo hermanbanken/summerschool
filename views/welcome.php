@@ -21,17 +21,27 @@
 	</div>
 </div>
 
-<div class="section material">
+<div class="section why">
 	<div class="container-narrow">
-	<div class="row-fluid card">
-	  <div class="span12">
-			<h2>Programma</h2>
+	<div class="card">
+	  <div class="info">
+			<h2>Waarom</h2>
 		</div>
 	</div>
 	</div>
 </div>
 
 <div class="section material">
+	<div class="container-narrow">
+	<div class="row-fluid card">
+	  <div class="span12">
+			<div class="info"><h2>Programma</h2></div>
+		</div>
+	</div>
+	</div>
+</div>
+
+<div class="section">
 	<div class="container-narrow">
 	<div class="row-fluid card">
 	  <div class="span4">
@@ -44,9 +54,9 @@
 	</div>
 </div>
 
-<div class="section">
+<div class="section material">
 	<div class="container-narrow">
-	<div class="row-fluid">
+	<div class="row-fluid card">
 	  <div class="span4">
 	    <h4>Verhaal</h4>
 	    <p>

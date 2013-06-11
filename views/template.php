@@ -8,6 +8,9 @@
     <meta name="description" content="Kies de beste docent van het jaar!">
     <meta name="author" content="Herman Banken">
 
+    <!-- Fav and touch icons -->
+    <link rel="shortcut icon" href="https://ch.tudelft.nl/sites/default/themes/CHallenge/favicon.ico">
+
     <!-- Le styles -->
     <link href="<?php echo URL::site("assets/css/bootstrap.css") ?>" rel="stylesheet">
     <link href="<?php echo URL::site("assets/css/bootstrap-responsive.min.css") ?>" rel="stylesheet">
@@ -17,11 +20,8 @@
     <!--[if lt IE 9]>
       <script src="assets/js/html5shiv.js"></script>
     <![endif]-->
-
-    <!-- Fav and touch icons -->
-    <link rel="shortcut icon" href="https://ch.tudelft.nl/sites/default/themes/CHallenge/favicon.ico">
 		
-		<script>var root_url = "<?php echo URL::base(); ?>";</script>
+		<meta name="root_url" content="<?php echo URL::base(); ?>">
   </head>
 
   <body class="<?php echo Request::current()->controller()." ".Request::current()->controller()."-".Request::current()->action(); ?>">
@@ -32,17 +32,16 @@
     <?php echo $content; ?>
 
     <div class="section footer">
-    	<p>&copy; W.I.S.V. 'Christiaan Huygens' <?php echo date("Y"); ?></p>
-    </div>
+			<div class="container-narrow">
+				<p>&copy; W.I.S.V. 'Christiaan Huygens' <?php echo date("Y"); ?></p>
+			</div>
+		</div>
 
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="<?php echo URL::site("assets/js/jquery.js") ?>"></script>
-    <script src="<?php echo URL::site("assets/js/jquery.hashchange.js") ?>"></script>
-    <script src="<?php echo URL::site("assets/js/bootstrap.min.js") ?>"></script>
+    <script src="<?php echo URL::site("assets/js/combined.js") ?>"></script>
     <script src="<?php echo URL::site("assets/js/app.js") ?>"></script>
-    <script src="<?php echo URL::site("assets/js/Placeholders.min.js") ?>"></script>
 
 	</div>
 	<script type="text/javascript">
