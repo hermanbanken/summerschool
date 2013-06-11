@@ -14,8 +14,11 @@ body {
 
 /* Main marketing message and sign up button */
 .jumbotron {
-  margin: 60px 0;
+  margin: 0 -20px 100px;
+	padding-top: 60px;
   text-align: center;
+	color: white;
+	text-shadow: 0 0 10px #000;
 }
 .jumbotron h1 {
   font-size: 72px;
@@ -27,7 +30,19 @@ body {
 }
 .jumbotron .token {
 	margin-bottom: 0;
-	width: auto;
+	width: 180px;
+}
+
+.Default-index { 
+	background: url('../img/jumbotron.jpg') no-repeat top center;
+	background-size: 100% auto;
+}
+.Default-index hr { display: none; }
+.content-wrap {
+	background: #fff;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	background: rgba(255,255,255,.7);
 }
 
 .marketing {

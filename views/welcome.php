@@ -1,34 +1,83 @@
 <div class="jumbotron">
-		<h1><?php echo __("Beloon je docent voor zijn harde werk"); ?></h1>
-	  <p class="lead"><?php echo __("De docenten van EWI werken hard om jou kennis en vaardigheden bij te brengen. Doe iets terug door op hen te stemmen en je waardering te uiten!"); ?></p>
-	  <form method="post" action="auth/login">
-				<input type="email" name="mail" size="5" placeholder="E-mailadres" class="token" value="" />
-				<input
-				 type="submit" 
-				 class="btn btn-large btn-success" 
-				 value="<?php echo __("Stem nu"); ?>" 
-				 data-toggle="popover" 
-				 data-content="<?php echo __("De persoonlijke token die u per mail heeft ontvangen is de code om mee in te loggen."); ?>" 
-				 data-original-title="<?php echo __("Aanmelden"); ?>" />
-			<input type="hidden" name="redirect" value="Docenten" />
-		</form>
+	<h1><?php echo __("Wiskunde Summerschool"); ?></h1>
+  <p class="lead"><?php echo __("Begin je studie goed, spijker je wiskunde bij"); ?></p>
+	<form method="post" action="auth/login">
+			<input type="email" name="mail" placeholder="E-mailadres" class="token" value="" />
+			<input
+			 type="submit" 
+			 class="btn btn-large btn-success" 
+			 value="<?php echo __("Inschrijven"); ?>" 
+			 data-toggle="popover" 
+			 data-content="<?php echo __("De persoonlijke token die u per mail heeft ontvangen is de code om mee in te loggen."); ?>" 
+			 data-original-title="<?php echo __("Aanmelden"); ?>" />
+		<input type="hidden" name="redirect" value="Docenten" />
+	</form>
 </div>
 
-<hr>
+<div class="container-fluid content-wrap">
+	<div class="row-fluid">
+	  <div class="span4">
+	    <h4>Verhaal</h4>
+	    <p>
+				Verhaaltje over iets.
+			</p>
+		</div>
 
-<div class="row-fluid">
-  <div class="span6">
-    <h4>Verhaal</h4>
-    <p>
-			Verhaaltje over iets.
-		</p>
+	  <div class="span4">
+	    <h4>Ervaringen</h4>
+	    <blockquote>
+				<p>"Lang heb ik getwijfeld."</p>
+				<small>Persoontje A, <cite>student TW</cite></small>
+			</blockquote>
+	  </div>
+
+	  <div class="span4">
+	    <h3>Agenda</h3>
+			<div class="media">
+			  <a class="pull-left" href="#">
+			    <img class="media-object" data-src="holder.js/64x64">
+			  </a>
+			  <div class="media-body">
+			    <h4 class="media-heading">5 augustus</h4>
+			    Mogelijkheid 1
+			  </div>
+			</div>
+			<div class="media">
+			  <a class="pull-left" href="#">
+			    <img class="media-object" data-src="holder.js/64x64">
+			  </a>
+			  <div class="media-body">
+			    <h4 class="media-heading">9 augustus</h4>
+			    Mogelijkheid 2
+			  </div>
+			</div>
+			<div class="media">
+			  <a class="pull-left" href="#">
+			    <img class="media-object" data-src="holder.js/64x64">
+			  </a>
+			  <div class="media-body">
+			    <h4 class="media-heading">13 augustus</h4>
+			    Afsluitende dag
+			  </div>
+			</div>
+			<div class="media">
+			  <a class="pull-left" href="#">
+			    <img class="media-object" data-src="holder.js/64x64">
+			  </a>
+			  <div class="media-body">
+			    <h4 class="media-heading">16 augustus</h4>
+			    Begin Eerstejaarweekend en OWee
+			  </div>
+			</div>
+			<div class="media">
+			  <a class="pull-left" href="#">
+			    <img class="media-object" data-src="holder.js/64x64">
+			  </a>
+			  <div class="media-body">
+			    <h4 class="media-heading">2 september</h4>
+			    Eerste collegedag
+			  </div>
+			</div>
+	  </div>
 	</div>
-
-  <div class="span6">
-    <h4>Ervaringen</h4>
-    <blockquote>
-			<p>"Lang heb ik getwijfeld."</p>
-			<small>Persoontje A, <cite>student TW</cite></small>
-		</blockquote>
-  </div>
 </div>
