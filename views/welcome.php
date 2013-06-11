@@ -1,20 +1,51 @@
-<div class="jumbotron">
-	<h1><?php echo __("Wiskunde Summerschool"); ?></h1>
-  <p class="lead"><?php echo __("Begin je studie goed, spijker je wiskunde bij"); ?></p>
-	<form method="post" action="auth/login">
-			<input type="email" name="mail" placeholder="E-mailadres" class="token" value="" />
-			<input
-			 type="submit" 
-			 class="btn btn-large btn-success" 
-			 value="<?php echo __("Inschrijven"); ?>" 
-			 data-toggle="popover" 
-			 data-content="<?php echo __("De persoonlijke token die u per mail heeft ontvangen is de code om mee in te loggen."); ?>" 
-			 data-original-title="<?php echo __("Aanmelden"); ?>" />
-		<input type="hidden" name="redirect" value="Docenten" />
-	</form>
+<div class="section welcome">
+	<div class="container-narrow jumbotron">
+	<div class="row-fluid">
+	  <div class="span12">
+			<h1><?php echo __("Wiskunde Summerschool"); ?></h1>
+		  <p class="lead"><?php echo __("Begin je studie met een vliegende start"); ?></p>
+			<form method="post" action="auth/login">
+					<input type="email" name="mail" placeholder="E-mailadres" class="token" value="" />
+					<input
+					 type="submit" 
+					 class="btn btn-large btn-success" 
+					 value="<?php echo __("Inschrijven"); ?>" 
+					 data-toggle="popover" 
+					 data-content="<?php echo __("De persoonlijke token die u per mail heeft ontvangen is de code om mee in te loggen."); ?>" 
+					 data-original-title="<?php echo __("Aanmelden"); ?>" />
+				<input type="hidden" name="redirect" value="Docenten" />
+			</form>
+			
+		</div>
+	</div>
+	</div>
 </div>
 
-<div class="container-fluid content-wrap">
+<div class="section material">
+	<div class="container-narrow">
+	<div class="row-fluid card">
+	  <div class="span12">
+			<h2>Programma</h2>
+		</div>
+	</div>
+	</div>
+</div>
+
+<div class="section material">
+	<div class="container-narrow">
+	<div class="row-fluid card">
+	  <div class="span4">
+			Book
+		</div>
+	  <div class="span8">
+			Uitleg waarom, waar te kopen...
+		</div>
+	</div>
+	</div>
+</div>
+
+<div class="section">
+	<div class="container-narrow">
 	<div class="row-fluid">
 	  <div class="span4">
 	    <h4>Verhaal</h4>
@@ -80,4 +111,5 @@
 			</div>
 	  </div>
 	</div>
+</div>
 </div>

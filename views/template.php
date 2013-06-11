@@ -10,9 +10,9 @@
 
     <!-- Le styles -->
     <link href="<?php echo URL::site("assets/css/bootstrap.css") ?>" rel="stylesheet">
-    <link href="<?php echo URL::site("assets/css/app.css") ?>" rel="stylesheet">
     <link href="<?php echo URL::site("assets/css/bootstrap-responsive.min.css") ?>" rel="stylesheet">
-
+    <link href="<?php echo URL::site("assets/css/app.css") ?>" rel="stylesheet">
+    
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="assets/js/html5shiv.js"></script>
@@ -25,24 +25,15 @@
   </head>
 
   <body class="<?php echo Request::current()->controller()." ".Request::current()->controller()."-".Request::current()->action(); ?>">
-		
-		<div class="visible-phone alert warning"><p><?php echo __("Deze website is niet volledig geoptimaliseerd voor mobiel gebruik. Stem bij voorkeur op een desktop/laptop."); ?></p></div>
+	<div class="full">
     
-		<div class="container<?php echo $container_style ?>">
+		<?php echo $menu; ?>
 
-      <?php echo $menu; ?>
+    <?php echo $content; ?>
 
-      <hr>
-
-     	<?php echo $content; ?>
-
-      <hr>
-
-      <div class="footer">
-        <p>&copy; W.I.S.V. 'Christiaan Huygens' <?php echo date("Y"); ?></p>
-      </div>
-
-    </div> <!-- /container -->
+    <div class="section footer">
+    	<p>&copy; W.I.S.V. 'Christiaan Huygens' <?php echo date("Y"); ?></p>
+    </div>
 
     <!-- Le javascript
     ================================================== -->
@@ -53,7 +44,7 @@
     <script src="<?php echo URL::site("assets/js/app.js") ?>"></script>
     <script src="<?php echo URL::site("assets/js/Placeholders.min.js") ?>"></script>
 
-  </body>
+	</div>
 	<script type="text/javascript">
 
 	  var _gaq = _gaq || [];
@@ -67,4 +58,5 @@
 	  })();
 
 	</script>
+</body>
 </html>
