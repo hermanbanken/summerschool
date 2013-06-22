@@ -3,3 +3,4 @@ cache/*
 bootstrap.php
 .htaccess
 index.php
+kohana
