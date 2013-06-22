@@ -41,8 +41,6 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="<?php echo URL::site("assets/js/combined.js") ?>"></script>
-    <script src="<?php echo URL::site("assets/js/Chart.min.js") ?>"></script>
-    <script src="<?php echo URL::site("assets/js/raphael-min.js") ?>"></script>
     <script src="<?php echo URL::site("assets/js/app.js") ?>"></script>
 
 	</div>
