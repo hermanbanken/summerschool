@@ -27,7 +27,7 @@
 	</div>
 </div>
 
-<div class="section why">
+<div class="section why" id="about">
 	<div class="container-narrow">
 	<div class="heading">
     <h2 class="bigger">Waarom</h2>
@@ -46,7 +46,7 @@
 	</div>
 </div>
 
-<div class="section material">
+<div class="section material programme" id="program">
 	<div class="container-narrow">
 		<div class="heading">
 	    <h2 class="bigger">Programma</h2>
@@ -55,12 +55,32 @@
 	<div class="row-fluid card">
 	  <div class="span12">
 			<div class="info">
-				<div id="timeline" width="100%" height="20"></div>
-				De summerschool bestaat uit 2 bijeenkomsten en online hulp van dezelfde assistenten die bij de bijeenkomsten aanwezig zijn in de tussen tijd. Op die manier hoef je niet elke dag op en neer naar Delft.
+				<p>De summerschool bestaat uit drie bijeenkomsten en tussendoor online hulp van dezelfde assistenten die bij de bijeenkomsten aanwezig zijn. Op die manier hoef je niet elke dag op en neer naar Delft.</p>
+				<br><div id="timeline" width="100%" height="20"></div>
 				<dl>
-					<dt>Eerste bijeenkomst</dt><dd>Tijdens de eerste bijeenkomst krijg je het materiaal dat je nodig hebt uitgereikt. Hierna maak je een toets zodat we weten waar je ongeveer staat en aan de hand daarvan wordt bepaald in welke groep je komt. Er zijn 2 momenten om deel te nemen aan de eerste bijeenkomst, op &lt;moment 1&gt; en op &lt;moment 2&gt;.</dd>
-					<dt>Thuis aan de slag</dt><dd>Na de eerste bijeenkomst ga je thuis aan de slag met de opgaven en het oefenmateriaal dat je meekrijgt. Als je vragen hebt dan staan de assistenten voor je klaar op Google Hangout of Skype.</dd>
-					<dt>Afsluiting</dt><dd>Alle besproken onderwerpen worden nog een keer op een rijtje gezet. Er komt een weer een toets, om te kijken of je beter bent geworden, en na afloop krijg je een certificaat.</dd>
+					<dt>Eerste bijeenkomst <small>maandag 5 augustus</small></dt><dd>Tijdens de eerste bijeenkomst krijg je het materiaal dat je nodig hebt uitgereikt. Het programma van de dag is als volgt: 
+						<table class="table table-condensed table-striped">
+							<tr><td>09:00 - 12:00 uur</td><td>Instructie en samen oefenen</td></tr>
+							<tr><td>12:00 - 13:30 uur</td><td>Lunch en mini-excursie</td></tr>
+							<tr><td>13:30 - 17:00 uur</td><td>Instructie en samen oefenen</td></tr>
+						</table></dd>
+					<dt>Thuis aan de slag</dt><dd>Na de eerste bijeenkomst ga je thuis aan de slag met de opgaven en het oefenmateriaal dat je meekrijgt. Er is voor elke dag minimaal 2 uur aan oefenopgaven beschikbaar. Als je vragen hebt dan staan de assistenten voor je klaar op Google Hangout of Skype.</dd>
+					<dt>Tweede bijeenkomst <small>vrijdag 9 augustus</small></dt><dd>Programma:
+						<table class="table table-condensed table-striped">
+							<tr><td>09:00 - 10:30 uur</td><td>Wat ging er goed, wat ging er minder</td></tr>
+							<tr><td>10:30 - 12:30 uur</td><td>Extra uitleg op moeilijke onderwerpen</td></tr>
+							<tr><td>12:30 - 14:00 uur</td><td>Lunch en mini-excursie</td></tr>
+							<tr><td>14:00 - 17:00 uur</td><td>Instructie (nieuwe onderwerpen) en samen oefenen</td></tr>
+						</table></dd>
+					<dt>Thuis aan de slag</dt><dd>Wederom ga je thuis aan de slag met de opgaven en het oefenmateriaal dat je meekrijgt. Er is voor elke dag minimaal 2 uur aan oefenopgaven beschikbaar. Als je vragen hebt dan staan de assistenten voor je klaar op Google Hangout of Skype.</dd>
+					<dt>Derde bijeenkomst <small>dinsdag 13 augustus</small></dt><dd>Alle besproken onderwerpen worden nog een keer op een rijtje gezet. Er is een toets, om te kijken wat je niveau is geworden, en na afloop krijg je een certificaat.
+						<table class="table table-condensed table-striped">
+							<tr><td>09:00 - 10:00 uur</td><td>Wat ging er goed, wat ging er minder</td></tr>
+							<tr><td>10:00 - 12:00 uur</td><td>Extra uitleg op moeilijke onderwerpen</td></tr>
+							<tr><td>12:00 - 13:00 uur</td><td>Lunch</td></tr>
+							<tr><td>13:30 - 14:30 uur</td><td>Samen oefenen</td></tr>
+							<tr><td>14:30 - 15:30 uur</td><td>Eindtoets</td></tr>
+						</table></dd>
 				</dl>
 			</div>
 		</div>

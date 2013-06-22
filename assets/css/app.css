@@ -18,6 +18,12 @@ canvas { padding: 10px; }
 canvas.right { padding: 0 0 10px 10px; float: right; }
 canvas.left { padding: 0 10px 10px 0; float: left; }
 
+.programme table {
+	margin: 10px 0;
+}
+.programme small { color: grey; }
+.programme dd { margin-bottom: 10px; }
+
 .section {
 	box-shadow: inset 0 1px rgba(0, 0, 0, 0.1), inset 0 5px 3px -3px rgba(0, 0, 0, 0.1);
 	background-attachment: fixed, fixed;
@@ -75,6 +81,10 @@ canvas.left { padding: 0 10px 10px 0; float: left; }
 	width: 100px;
 	text-indent: -9000px;
 }
+
+.navbar.navbar-top { margin-top: -20px; margin-bottom: 0; }
+.navbar.navbar-top .navbar-inner { border-radius: 0; border: none; }
+
 .navbar-inner { background: white; }
 .navbar .nav { margin: 15px 0; }
 .navbar form { margin: 0; }
@@ -91,14 +101,13 @@ canvas.left { padding: 0 10px 10px 0; float: left; }
 
 /* Welcome */
 .section.welcome {
-	background: url('../img/jumbotron.jpg') no-repeat top center;
-	background-size: cover;
+	background: white url('../img/jumbotron.jpg') no-repeat top center;
+	background-size: 100% auto;
 }
 
 /* Material */
 .section.material { 
-	background: url("../img/mathslide.png") no-repeat center;
-	background-size: cover;
+	background: url("../img/mathslide.png") repeat center;
 }
 
 /* Main marketing message and sign up button */
@@ -148,7 +157,9 @@ ul.nav li img.language-icon {
 @media (max-width: 767px){
 	body { padding: 0; }
 	.navbar { padding: 0 20px; }
+	.navbar.navbar-top { padding: 0; }
 	.section { padding: 10px 20px; }
+	ol, ul { list-style-position: inside; }
 	.jumbotron h1 { font-size: 40px; }
 	.jumbotron { margin-top: 10px; margin-bottom: 10px; padding-top: 20px; }
 	.section .card .info { padding: 10px 20px; }
@@ -156,6 +167,7 @@ ul.nav li img.language-icon {
 }
 @media (max-width: 979px){
 	.navbar-fixed-top { margin-bottom: 0; }
+	.navbar, .navbar.navbar-top { margin-top: 0; }
 	.navbar .brand { height: 40px; background-position: top; margin: 0; padding: 0 10px; }
 	.full { padding-top: 0; }
 	.section .card { background-color: rgba(255,255,255,.8);}

@@ -10,8 +10,8 @@
       <div class="nav-collapse collapse">
         <ul class="nav">
           <li><a href="#about">Waarom</a></li>
-          <li><a href="#contact">Programma</a></li>
-          <li><a href="#contact">Materiaal</a></li>
+          <li><a href="#program">Programma</a></li>
+          <li><a href="#material">Materiaal</a></li>
 	          <li><a href="#contact">Contact</a></li>
         </ul>
       </div><!--/.nav-collapse -->
