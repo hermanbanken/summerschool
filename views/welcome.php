@@ -27,7 +27,7 @@
 	</div>
 </div>
 
-<div class="section why" id="about">
+<div class="section material" id="about">
 	<div class="container-narrow">
 	<div class="heading">
     <h2 class="bigger">Waarom</h2>
@@ -46,7 +46,7 @@
 	</div>
 </div>
 
-<div class="section material programme" id="program">
+<div class="section why programme" id="program">
 	<div class="container-narrow">
 		<div class="heading">
 	    <h2 class="bigger">Programma</h2>
@@ -83,6 +83,39 @@
 						</table></dd>
 				</dl>
 			</div>
+		</div>
+	</div>
+	</div>
+</div>
+
+<div class="section material" id="material">
+	<div class="container-narrow">
+	<div class="heading">
+    <h2 class="bigger">Materiaal</h2>
+    <p>Welke stof behandelen we, is er nog een boek nodig?</p>
+  </div>
+	<div class="card">
+	  <div class="info">
+			<img class='right' width="200" height="300" />
+			<p>Het boek Calculus van Stewart is een begrip op de universiteit. Het is een gerenomeerd boek over de fundamentele onderdelen van de wiskunde. Gedurende het eerste jaar wordt dit boek nog vaker gebruikt. Om het nu al aan te schaffen kan dus geen kwaad.</p>
+			<p>In de kosten van de summerschool is het boek inbegrepen. Het boek wordt geleverd door de studievereniging W.I.S.V. "Christiaan Huygens". Vanaf de eerste week kan je hier ook alle andere boeken kopen van het actuele kwartaal. Studenten Elektrotechniek kunnen de boeken dan kopen bij de Elektrotechnische Vereniging. Beide studieverenigingen zijn gevestigd in de faculteit.</p>
+			<p>Meer informatie van de auteur: <a href="http://www.stewartcalculus.com/">www.stewartcalculus.com</a>
+		</div>
+	</div>
+	</div>
+</div>
+
+<div class="section why" id="contact">
+	<div class="container-narrow">
+	<div class="heading">
+    <h2 class="bigger">Contact</h2>
+    <p>Heb je nog vragen? Stel ze hier</p>
+  </div>
+	<div class="card">
+	  <div class="info">
+			<textarea placeholder="Type hier je vraag..." style="width: 100%"></textarea>
+			<input class="btn btn-primary right" type="submit" value="Stel je vraag" />
+			<div class="clearfix"></div>
 		</div>
 	</div>
 	</div>

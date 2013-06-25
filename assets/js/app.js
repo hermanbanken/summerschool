@@ -26,23 +26,44 @@ $(function(){
 		5: {t:"Eerste\nbijeenkomst"},
 		9: {t:"Tweede\nbijeenkomst"},
 		13: {t:"Derde\nbijeenkomst"},
-		16: {t:"EJW", w:3},
-		19: {t:"OWee", w:4},
+		16: {t:"EJW", w:3, h:"//eerstejaarsweekend.nl"},
+		19: {t:"OWee", w:4, h:"//owee.nl"},
 		33: {t:"Eerste\ncollegedag"},
-		
 	};
+	
+	function hoverState(circle, text, set){
+		var originalTransform = text.attr('transform');
+		return [
+			function(){
+				circle.animate({transform: "s1.3"}, 200);
+				text.animate({fill: color, transform: originalTransform+"r30"}, 200);
+			}, function(){
+				circle.animate({transform: "s1"}, 200);
+				text.animate({fill: "black", transform: originalTransform}, 200);
+			}
+		];
+	}
+	
 	for(var i = s; i <= e; i++){
 		if(i in events){
-			var p = (line.getTotalLength()/(e-s)*(i-s)),
+			var set,
+					p = (line.getTotalLength()/(e-s)*(i-s)),
 					w = events[i].w ? line.getTotalLength()/(e-s)*events[i].w : 1;
+		
+			r.setStart();
+		
+			// Circle and text
 			var circle = w > 1 ? r.rect(p-4, 50-4, w, 8, 4) : r.circle(p, 50, 4);
 			circle.attr({stroke: color, fill: 'white', "stroke-width": 2});
-			circle.hover(function(){
-				this.animate({transform: "s1.3"}, 200);
-			}, function(){
-				this.animate({transform: "s1"}, 200);
-			}, circle, circle);
-			r.text(p + (w > 1 ? w/2 : 0), 10, events[i].t).transform("r-30T"+ (events[i].t.length > 7 ? "10,10": "0,20"));
+			var text = r.text(p + (w > 1 ? w/2 : 0), 10, events[i].t);
+			text.transform("r-30T"+ (events[i].t.length > 7 ? "10,10": "0,20"));
+			
+			// Animate
+			//var hs = hoverState(circle, text, set);
+			(set = r.setFinish()).hover.apply(set, hoverState(circle, text, set));
+			if(events[i].h) set.attr({href:events[i].h,target:"blank"});
+			
+			// Day of month
 			r.text(p, 65, i%31);
 		}
 	}

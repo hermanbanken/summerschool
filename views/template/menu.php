@@ -6,13 +6,16 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="brand" href="#">TU Delft</a>
+      <a class="brand" href="<?php echo URL::site() ?>">TU Delft</a>
       <div class="nav-collapse collapse">
         <ul class="nav">
-          <li><a href="#about">Waarom</a></li>
-          <li><a href="#program">Programma</a></li>
-          <li><a href="#material">Materiaal</a></li>
-	          <li><a href="#contact">Contact</a></li>
+          <li><a href="<?php echo URL::site() ?>#about">Waarom</a></li>
+          <li><a href="<?php echo URL::site() ?>#program">Programma</a></li>
+          <li><a href="<?php echo URL::site() ?>#material">Materiaal</a></li>
+          <li><a href="<?php echo URL::site() ?>#contact">Contact</a></li>
+        </ul>
+        <ul class="nav pull-right">
+          <li><a href="<?php echo URL::site("user/login") ?>">Login</a></li>
         </ul>
       </div><!--/.nav-collapse -->
     </div>
