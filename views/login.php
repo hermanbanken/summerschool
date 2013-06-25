@@ -32,9 +32,11 @@
   <h2 class="form-signin-heading">Inloggen</h2>
 	<p>Na <a href="<?php echo URL::site() ?>">inschrijving</a> ontvangt u op uw e-mailadres uw logingegevens.</p>
 	<?php if(isset($message)): ?>
-		Error! <?php echo $message; ?>
+		<div class="alert alert-error">
+		  <strong>Fout</strong>. <?php echo $message; ?>
+		</div>
 	<?php endif; ?>
-  <input type="text" name="username" class="input-block-level" placeholder="Gebruikersnaam" value="<?php isset($username) ? esc_attr($username) : ""; ?>">
-  <input type="password" name="password" class="input-block-level" placeholder="Wachtwoord">
+  <input type="text" name="username" class="input-block-level" placeholder="Gebruikersnaam" value="<?php echo htmlentities($username); ?>">
+	<input type="password" name="password" class="input-block-level" placeholder="Wachtwoord">
   <button class="btn btn-large btn-primary" type="submit">Inloggen</button>
 </form>

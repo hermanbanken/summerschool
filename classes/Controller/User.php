@@ -9,7 +9,7 @@ class Controller_User extends Controller_Website {
 			exit;
 		}
 			
-		$this->template->content = View::factory("login");
+		$this->template->content = View::factory("login")->set('username', '');
 		if($this->request->method() == "POST"){
 			$s = Auth::instance()->login($this->request->post('username'), $this->request->post('password'));
 			if($s){
