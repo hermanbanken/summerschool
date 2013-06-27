@@ -86,9 +86,9 @@
 	<div class="card">
 	  <div class="info">
 			<img class='right' width="200" height="300" />
-			<p>Deelname is aanbevolen voor alle studenten die een 7 of lager hadden voor hun centraal examen Wiskunde-B. Heb je nooit Wiskunde-B examen gemaakt dan kan je <a href="">hier</a> een examen vinden om jezelf te testen.</p>
+			<p>Deelname is aanbevolen voor alle studenten die een 7 of lager hadden voor hun centraal examen Wiskunde-B. Heb je nooit Wiskunde-B examen gemaakt dan kan je <a href="http://www.examenblad.nl/9336000/1/j9vvhinitagymgn_m7mvi7dmy3fq6u9_n11vg41h1h4i9qe/vhi1nc4phqyw?topparent=vg41h1h4i9qe">hier</a> een examen vinden om jezelf te testen.</p>
 			<p>De kosten van de summerschool bedragen &euro; <?php echo $costs; ?>. Dit is inclusief de boeken, lunch en koffie en thee. Wanneer je geselecteerd bent ontvang je meer informatie over hoe je kan betalen.</p>
-			<p>Je wordt voor aanvang van elke bijeenkomst verwacht op de <a href="">faculteit EWI, Mekelweg 4</a>, bij de hoofdingang. De faculteit is goed bereikbaar vanaf station Delft met de bus. Parkeren is mogelijk op de Feldmannweg.</p>
+			<p>Je wordt voor aanvang van elke bijeenkomst verwacht op de <a href="https://maps.google.nl/maps?q=Mekelweg+4,+Delft&hl=nl&ll=51.999081,4.374074&spn=0.001166,0.002822&sll=51.999183,4.373009&sspn=0.00469,0.011287&hnear=Mekelweg+4,+2628+CD+Delft,+Zuid-Holland&t=m&z=19">faculteit EWI, Mekelweg 4</a>, bij de hoofdingang. De faculteit is goed bereikbaar vanaf station Delft met de bus. Parkeren is mogelijk op de Feldmannweg.</p>
 			<p>Tijdens de summerschool gebruiken we twee boeken. Om op het gewenste VWO niveau te komen gebruiken we het Basisboek Wiskunde. Voor de uitdagendere stof en sommen gebruiken we <a href="http://www.stewartcalculus.com/">Calculus van Stewart</a>, een begrip op de universiteit. Calculus heb je ook nodig voor de wiskunde vakken gedurende je eerste jaar.</p>
 			<p>In de kosten van de summerschool zijn de boeken inbegrepen. De boeken worden geleverd door de studievereniging W.I.S.V. "Christiaan Huygens". Vanaf de eerste week kan je hier ook alle andere boeken kopen van het actuele kwartaal. Studenten Elektrotechniek kunnen de boeken dan kopen bij de Elektrotechnische Vereniging. Beide studieverenigingen zijn gevestigd in de faculteit.</p>
 		</div>

@@ -63,7 +63,7 @@ class Controller_User extends Controller_Website {
 					$m->save();
 				}
 
-				$this->send_pass($user, $pass);
+				$this->send_pass($user, "Beste ".$user->username.",\n\n U heeft u ingeschreven voor de wachtlijst van de Wiskunde-B Summerschool van de faculteit EWI. Uw gebruikersnaam is uw emailadres en uw wachtwoord is \"$pass\".\n\nMet vriendelijke groet,\nHerman Banken", $pass);
 				Auth::instance()->force_login($user, false);
 
 				Session::instance()->set("flash", array(
@@ -96,7 +96,7 @@ class Controller_User extends Controller_Website {
 		if($user->loaded() && $user->email === $this->request->post("email"))
 		{
 			$pass 	 = Text::random();
-			$this->send_pass($user, $pass);
+			$this->send_pass($user, false, $pass);
 			$user->update_user(array(
 				'password' => $pass, 
 				'password_confirm' => $pass
@@ -107,12 +107,12 @@ class Controller_User extends Controller_Website {
 		exit;
 	}
 	
-	public function send_pass($user, $pass = false){
+	public function send_pass($user, $message = false, $pass = false){
 		$pass 	 = $pass ? $pass : Text::random();
 		$to      = $user->email;
 		$subject = "Summerschool wachtwoord";
-		$message = 'Beste '.$user->username.",\n\n Er is via de website van de Summerschool een nieuw wachtwoord aangevraagd voor uw account. Het nieuwe wachtwoord is \"$pass\".\n\nMet vriendelijke groet,\nHerman Banken";
-		$headers = 'From: coi@ch.tudelft.nl' . "\r\n" . 'Reply-To: coi@ch.tudelft.nl';
+		$message = $message ? $message : 'Beste '.$user->username.",\n\n Er is via de website van de Summerschool een nieuw wachtwoord aangevraagd voor uw account. Het nieuwe wachtwoord is \"$pass\".\n\nMet vriendelijke groet,\nHerman Banken";
+		$headers = 'From: coi@ch.tudelft.nl' . "\r\n" . 'Reply-To: summerschool@ch.tudelft.nl';
 
 		return mail($to, $subject, $message, $headers);
 	}
