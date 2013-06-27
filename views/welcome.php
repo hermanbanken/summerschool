@@ -1,3 +1,4 @@
+<?php $costs = "95"; ?>
 <div class="section welcome">
 	<div class="container-narrow jumbotron">
 	<div class="row-fluid">
@@ -79,37 +80,23 @@
 <div class="section material" id="material">
 	<div class="container-narrow">
 	<div class="heading">
-    <h2 class="bigger">Materiaal</h2>
-    <p>Welke stof behandelen we, is er nog een boek nodig?</p>
+    <h2 class="bigger">Deelname</h2>
+    <p>Wat kost het, waar is het, is er nog een boek nodig?</p>
   </div>
 	<div class="card">
 	  <div class="info">
 			<img class='right' width="200" height="300" />
-			<p>Het boek Calculus van Stewart is een begrip op de universiteit. Het is een gerenomeerd boek over de fundamentele onderdelen van de wiskunde. Gedurende het eerste jaar wordt dit boek nog vaker gebruikt. Om het nu al aan te schaffen kan dus geen kwaad.</p>
-			<p>In de kosten van de summerschool is het boek inbegrepen. Het boek wordt geleverd door de studievereniging W.I.S.V. "Christiaan Huygens". Vanaf de eerste week kan je hier ook alle andere boeken kopen van het actuele kwartaal. Studenten Elektrotechniek kunnen de boeken dan kopen bij de Elektrotechnische Vereniging. Beide studieverenigingen zijn gevestigd in de faculteit.</p>
-			<p>Meer informatie van de auteur: <a href="http://www.stewartcalculus.com/">www.stewartcalculus.com</a>
+			<p>Deelname is aanbevolen voor alle studenten die een 7 of lager hadden voor hun centraal examen Wiskunde-B. Heb je nooit Wiskunde-B examen gemaakt dan kan je <a href="">hier</a> een examen vinden om jezelf te testen.</p>
+			<p>De kosten van de summerschool bedragen &euro; <?php echo $costs; ?>. Dit is inclusief de boeken, lunch en koffie en thee. Wanneer je geselecteerd bent ontvang je meer informatie over hoe je kan betalen.</p>
+			<p>Je wordt voor aanvang van elke bijeenkomst verwacht op de <a href="">faculteit EWI, Mekelweg 4</a>, bij de hoofdingang. De faculteit is goed bereikbaar vanaf station Delft met de bus. Parkeren is mogelijk op de Feldmannweg.</p>
+			<p>Tijdens de summerschool gebruiken we twee boeken. Om op het gewenste VWO niveau te komen gebruiken we het Basisboek Wiskunde. Voor de uitdagendere stof en sommen gebruiken we <a href="http://www.stewartcalculus.com/">Calculus van Stewart</a>, een begrip op de universiteit. Calculus heb je ook nodig voor de wiskunde vakken gedurende je eerste jaar.</p>
+			<p>In de kosten van de summerschool zijn de boeken inbegrepen. De boeken worden geleverd door de studievereniging W.I.S.V. "Christiaan Huygens". Vanaf de eerste week kan je hier ook alle andere boeken kopen van het actuele kwartaal. Studenten Elektrotechniek kunnen de boeken dan kopen bij de Elektrotechnische Vereniging. Beide studieverenigingen zijn gevestigd in de faculteit.</p>
 		</div>
 	</div>
 	</div>
 </div>
 
-<div class="section why" id="contact">
-	<div class="container-narrow">
-	<div class="heading">
-    <h2 class="bigger">Contact</h2>
-    <p>Heb je nog vragen? Stel ze hier</p>
-  </div>
-	<div class="card">
-	  <div class="info">
-			<textarea placeholder="Type hier je vraag..." style="width: 100%"></textarea>
-			<input class="btn btn-primary right" type="submit" value="Stel je vraag" />
-			<div class="clearfix"></div>
-		</div>
-	</div>
-	</div>
-</div>
-
-<div class="section material" id="subscribe">
+<div class="section why" id="subscribe">
 	<div class="container-narrow">
 	<div class="heading">
     <h2 class="bigger">Inschrijven</h2>
@@ -122,6 +109,22 @@
 			<p>Ga naar het <a href="<?php echo URL::site("user") ?>">dashboard</a>.</p>
 		<?php else: include("subscribe.php"); endif; ?>
 		</div>		
+	</div>
+	</div>
+</div>
+
+<div class="section material" id="contact">
+	<div class="container-narrow">
+	<div class="heading">
+    <h2 class="bigger">Contact</h2>
+    <p>Heb je nog vragen? Stel ze hier</p>
+  </div>
+	<div class="card">
+	  <div class="info">
+			<textarea placeholder="Type hier je vraag..." style="width: 100%"></textarea>
+			<input class="btn btn-primary right" type="submit" value="Stel je vraag" />
+			<div class="clearfix"></div>
+		</div>
 	</div>
 	</div>
 </div>

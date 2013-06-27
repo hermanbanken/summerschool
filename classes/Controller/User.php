@@ -6,7 +6,6 @@ class Controller_User extends Controller_Website {
 	{
 		if(Auth::instance()->logged_in()){
 			HTTP::redirect("user");
-			exit;
 		}
 		
 		$this->template->content = View::factory("login")->set('username', '');

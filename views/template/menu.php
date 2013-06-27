@@ -11,7 +11,10 @@
         <ul class="nav">
           <li><a href="<?php echo URL::site() ?>#about">Waarom</a></li>
           <li><a href="<?php echo URL::site() ?>#program">Programma</a></li>
-          <li><a href="<?php echo URL::site() ?>#material">Materiaal</a></li>
+          <li><a href="<?php echo URL::site() ?>#material">Deelname</a></li>
+          <?php if(!Auth::instance()->logged_in()): ?>
+					<li><a href="<?php echo URL::site() ?>#subscribe">Inschrijven</a></li>
+					<?php endif; ?>
           <li><a href="<?php echo URL::site() ?>#contact">Contact</a></li>
         </ul>
         <ul class="nav pull-right">

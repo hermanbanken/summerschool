@@ -1,3 +1,4 @@
+<?php $costs = "95"; ?>
 <form class="form-horizontal form-user form-subscribe" method="post" action="<?php echo URL::site('user/subscribe') ?>">
   <h2 class="form-signin-heading">Inschrijven</h2>
 	<p>Na inschrijving wordt je op een wachtlijst gezet. We zullen handmatig studenten selecteren. Je ontvangt per mail of je bent geselecteerd of niet.</p>
@@ -11,19 +12,19 @@
 	<div class="control-group">
     <label class="control-label" for="inputName">Naam deelnemer*</label>
     <div class="controls">
-      <input type="text" id="inputName" name="username" placeholder="Voornaam Achternaam" value="<?php echo @htmlentities($username); ?>">
+      <input type="text" id="inputName" name="username" required placeholder="Voornaam Achternaam" value="<?php echo @htmlentities($username); ?>">
     </div>
   </div>
   <div class="control-group">
     <label class="control-label" for="inputEmail">Email*</label>
     <div class="controls">
-      <input type="text" id="inputEmail" name="email" placeholder="Email" value="<?php echo @htmlentities($email); ?>">
+      <input type="text" id="inputEmail" name="email" required placeholder="Email" value="<?php echo @htmlentities($email); ?>">
     </div>
   </div>
   <div class="control-group">
     <label class="control-label" for="inputPhone">06-nummer*</label>
     <div class="controls">
-      <input type="text" id="inputPhone" name="meta[phone]" placeholder="Waarop kunnen we de cursist bereiken." value="<?php echo @htmlentities($meta['phone']); ?>">
+      <input type="text" id="inputPhone" name="meta[phone]" required placeholder="Waarop kunnen we de cursist bereiken." value="<?php echo @htmlentities($meta['phone']); ?>">
     </div>
   </div>
   <div class="control-group">
@@ -64,7 +65,7 @@
   <div class="control-group">
     <label class="control-label" for="inputGrade">Wiskunde-B CE cijfer*</label>
     <div class="controls">
-      <input type="number" min="1" max="10" step="0.1" id="inputGrade" name="meta[grade]" value="<?php echo @htmlentities($meta['grade']); ?>">
+      <input type="number" min="1" max="10" step="0.1" required id="inputGrade" name="meta[grade]" value="<?php echo @htmlentities($meta['grade']); ?>">
     </div>
   </div>
   <div class="control-group">
@@ -73,6 +74,20 @@
       <textarea id="comments" name="meta[comments]" placeholder="Moeten we nog iets weten? Allergieen?" rows="3"><?php echo @htmlentities($meta['comments']); ?></textarea>
     </div>
   </div>
+  <div class="control-group">
+    <label class="control-label">Akkoord</label>
+    <div class="controls">
+      <label class="checkbox">
+				<input type="checkbox" name="agree" id="agree" required /> Ik ga akkoord met onderstaande voorwaarden.
+			</label>
+    </div>
+  </div>
+	<h5>Voorwaarden</h5>
+	<ul style="margin-left:35px">
+		<li>De kosten van de summerschool bedragen &euro; <?php echo $costs; ?>. De betaling moet binnen zijn voor aanvang van de summerschool, anders kunt u niet meedoen.</li>
+		<li>Niet iedereen kan meedoen. Na inschrijving komt u op een wachtlijst. Wanneer u wordt geselecteerd ontvangt u bericht over hoe te betalen.</li>
+		<li>Voor deelname is het boek Calculus verplicht en is inbegrepen in de prijs. Indien u dit boek al heeft (minimaal 7th edition) neem dan contact met ons op.</li>
+	</ul>
 	<div class="form-actions">
 	  <button type="submit" class="btn btn-primary">Inschrijven</button>
 	  <a class="btn" href="<?php echo URL::site() ?>">Annuleren</a>
