@@ -31,6 +31,8 @@
 		<div class="menu-padding"></div>
 		
 		<?php
+		$content = (string) $content;
+		
 		if($flash = Session::instance()->get("flash", false)){
 			echo "<div class='container-narrow'><div class='alert alert-$flash[type]'>$flash[message]</div></div>";
 			Session::instance()->delete("flash");

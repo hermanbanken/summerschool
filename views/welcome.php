@@ -121,9 +121,19 @@
   </div>
 	<div class="card">
 	  <div class="info">
-			<textarea placeholder="Type hier je vraag..." style="width: 100%"></textarea>
-			<input class="btn btn-primary right" type="submit" value="Stel je vraag" />
-			<div class="clearfix"></div>
+			<form action="<?php echo URL::site("Default/contact") ?>" method="post">
+				<?php
+				$flash = Session::instance()->get("flash", false);
+				if($flash && $flash['source'] == "contact"){
+					echo "<div class='container-narrow'><div class='alert alert-$flash[type]'>$flash[message]</div></div>";
+					Session::instance()->delete("flash");
+				}
+				?>
+				<input type="text" class="input-block-level" name="email" value="<?php if($u = Auth::instance()->get_user()) echo $u->email; ?>" placeholder="Emailadres">
+				<textarea placeholder="Type hier je vraag..." name="message" style="width: 100%"><?php echo htmlentities(Request::current()->query("message")); ?></textarea>
+				<input class="btn btn-primary right" type="submit" value="Stel je vraag" />
+				<div class="clearfix"></div>
+			</form>
 		</div>
 	</div>
 	</div>
