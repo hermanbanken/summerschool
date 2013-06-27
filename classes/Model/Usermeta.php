@@ -1,6 +1,6 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 
-class Model_UserMeta extends ORM {
+class Model_Usermeta extends ORM {
 	protected $_table_name = 'user_meta';
 	protected $_belongs_to = array('user' => array());
 

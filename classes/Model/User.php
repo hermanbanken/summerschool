@@ -15,7 +15,7 @@ class Model_User extends Model_Auth_User {
 			if($m->loaded())
 				$m->set("value", $value)->save();
 			else
-				ORM::factory("UserMeta")->values(array(
+				ORM::factory("Usermeta")->values(array(
 					"key" => $key,
 					"value" => $value
 				))->set('user', $this)->save();

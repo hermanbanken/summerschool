@@ -4,3 +4,6 @@ bootstrap.php
 .htaccess
 index.php
 kohana
+config/database.php
+config/auth.php
+*.psd

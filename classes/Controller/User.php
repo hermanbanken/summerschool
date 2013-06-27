@@ -46,7 +46,7 @@ class Controller_User extends Controller_Website {
 			try {
 				$metaModels = array();
 				foreach($meta as $key => $val){
-					$m = ORM::factory("UserMeta")->values(
+					$m = ORM::factory("Usermeta")->values(
 						array("key"=>$key, "value"=>$val)
 					);
 					$m->check();
