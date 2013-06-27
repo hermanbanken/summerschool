@@ -28,7 +28,15 @@
 	<div class="full">
     
 		<?php echo $menu; ?>
-
+		<div class="menu-padding"></div>
+		
+		<?php
+		if($flash = Session::instance()->get("flash", false)){
+			echo "<div class='container-narrow'><div class='alert alert-$flash[type]'>$flash[message]</div></div>";
+			Session::instance()->delete("flash");
+		}
+		?>
+		
     <?php echo $content; ?>
 
     <div class="section footer">

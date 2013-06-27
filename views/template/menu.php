@@ -15,7 +15,12 @@
           <li><a href="<?php echo URL::site() ?>#contact">Contact</a></li>
         </ul>
         <ul class="nav pull-right">
-          <li><a href="<?php echo URL::site("user/login") ?>">Login</a></li>
+          <?php if(Auth::instance()->logged_in()): ?>
+					<li><a href="<?php echo URL::site("user") ?>">Dashboard</a></li>
+					<li><a href="<?php echo URL::site("user/logout") ?>">Logout</a></li>
+					<?php else: ?>
+					<li><a href="<?php echo URL::site("user/login") ?>">Login</a></li>
+					<?php endif; ?>
         </ul>
       </div><!--/.nav-collapse -->
     </div>

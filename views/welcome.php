@@ -2,26 +2,13 @@
 	<div class="container-narrow jumbotron">
 	<div class="row-fluid">
 	  <div class="span12">
-			<h1><?php echo __("Wiskunde Summerschool"); ?></h1>
+			<h1><?php echo __("Wiskunde-B Summerschool"); ?></h1>
 		  <p class="lead"><?php echo __("Begin je studie met een vliegende start"); ?></p>
-			<form method="post" action="subscribe/interest">
-				<?php if(Request::current()->query('success')): ?>
-					<div class="alert alert-success">
-						<button type="button" class="close" data-dismiss="alert">×</button>
-						<strong>Gelukt!</strong> We hebben je e-mailadres opgeslagen. Zodra we meer informatie hebben updaten we deze pagina en ontvang je een e-mail.
-					</div>
-				<?php endif; ?>
-					<input type="email" name="mail" placeholder="E-mailadres" class="token" value="" />
-					<input
-					 type="submit" 
-					 class="btn btn-large btn-success" 
-					 value="<?php echo __("Houd me op de hoogte"); ?>" 
-					 data-toggle="popover" 
-					 data-content="<?php echo __("De persoonlijke token die u per mail heeft ontvangen is de code om mee in te loggen."); ?>" 
-					 data-original-title="<?php echo __("Aanmelden"); ?>" />
-				<input type="hidden" name="redirect" value="Docenten" />
-			</form>
-			
+      <?php if(Auth::instance()->logged_in()): ?>
+				<a class="btn btn-large btn-success" href="<?php echo URL::site("user"); ?>">Dashboard</a>
+			<?php else: ?>
+				<a class="btn btn-large btn-success" href="#subscribe">Inschrijven<br><small style="font-size:.6em">deadline 15 juli</small></a>
+			<?php endif; ?>
 		</div>
 	</div>
 	</div>
@@ -31,16 +18,16 @@
 	<div class="container-narrow">
 	<div class="heading">
     <h2 class="bigger">Waarom</h2>
-    <p>Je hebt je examen gehaald, waarom zou je nog naar de summerschool moeten?</p>
+    <p>Je hebt je examen gehaald, waarom zou je nog naar de Wiskunde-B summerschool komen?</p>
   </div>
 	<div class="card">
 	  <div class="info">
-			<canvas class='right' width="200" height="200" id="pieChartCanvas">Je browsers ondersteunt geen 'canvas'. Slechts 40% van de studenten haalt Analyse 1 (Wiskunde) de eerste keer.</canvas>
-			<ol><li>Slechts 56% van de studenten (zonder summerschool) haalt het wiskunde vak Calculus de eerste keer.</li>
-			<li>Huidig studenten geven aan dat de middelbare school ze niet voldoende heeft voorbereid op universitaire wiskunde.</li>
-			<li>Wiskunde vormt een belangrijk onderdeel van de opleiding en ligt aan het fundament van bijna elk vak.</li>
-			<li>Beginnen met een vliegende start zorgt er voor dat je zometeen in september niet meteen schrikt van de hoeveelheid stof en daardoor in de problemen komt.</li></ol>
-			<p>Op de middelbare school heb je trucjes geleerd om sommen op te lossen. Op de universiteit leer je hoe wiskunde werkt.</p>
+			<canvas class='right' width="200" height="200" id="pieChartCanvas">Je browser ondersteunt geen 'canvas'. Slechts 40% van de studenten haalt Analyse 1 (Wiskunde) de eerste keer.</canvas>
+			<ol><li>Slechts de helft van de studenten die geen summerschool gevolgd hebben haalt de wiskunde vakken de eerste keer.</li>
+			<li>Huidige studenten geven aan dat ze zich op de middelbare school niet voldoende hebben voorbereid op universitaire wiskunde.</li>
+			<li>Wiskunde vormt een belangrijk onderdeel van je opleiding en ligt aan het fundament van bijna elk vak.</li>
+			<li>Beginnen met een vliegende start zorgt er voor dat je zometeen in september niet meteen achter loopt en daardoor in de problemen komt.</li></ol>
+			<p>Op de middelbare school heb je trucjes geleerd om sommen op te lossen. Tijdens de summerschool leer je hoe wiskunde werkt.</p>
 		</div>
 	</div>
 	</div>
@@ -58,13 +45,13 @@
 				<p>De summerschool bestaat uit drie bijeenkomsten en tussendoor online hulp van dezelfde assistenten die bij de bijeenkomsten aanwezig zijn. Op die manier hoef je niet elke dag op en neer naar Delft.</p>
 				<br><div id="timeline" width="100%" height="20"></div>
 				<dl>
-					<dt>Eerste bijeenkomst <small>maandag 5 augustus</small></dt><dd>Tijdens de eerste bijeenkomst krijg je het materiaal dat je nodig hebt uitgereikt. Het programma van de dag is als volgt: 
+					<dt>Eerste bijeenkomst <small>maandag 5 augustus</small></dt><dd>Tijdens de eerste bijeenkomst krijg je het materiaal dat je nodig hebt uitgereikt. Daarna word je in groepjes van 5 a 6 studenten ingedeeld. Het programma van de dag is als volgt: 
 						<table class="table table-condensed table-striped">
 							<tr><td>09:00 - 12:00 uur</td><td>Instructie en samen oefenen</td></tr>
 							<tr><td>12:00 - 13:30 uur</td><td>Lunch en mini-excursie</td></tr>
 							<tr><td>13:30 - 17:00 uur</td><td>Instructie en samen oefenen</td></tr>
 						</table></dd>
-					<dt>Thuis aan de slag</dt><dd>Na de eerste bijeenkomst ga je thuis aan de slag met de opgaven en het oefenmateriaal dat je meekrijgt. Er is voor elke dag minimaal 2 uur aan oefenopgaven beschikbaar. Als je vragen hebt dan staan de assistenten voor je klaar op Google Hangout of Skype.</dd>
+					<dt>Thuis aan de slag</dt><dd>Na de eerste bijeenkomst ga je thuis aan de slag met de opgaven en het oefenmateriaal dat je meekrijgt. Dat kost elke dag zo'n 2 uur. Als je vragen hebt bespreek je die eerst met je groepje. Komen jullie er niet uit dan staan de assistenten voor je klaar op Google Hangout of Skype.</dd>
 					<dt>Tweede bijeenkomst <small>vrijdag 9 augustus</small></dt><dd>Programma:
 						<table class="table table-condensed table-striped">
 							<tr><td>09:00 - 10:30 uur</td><td>Wat ging er goed, wat ging er minder</td></tr>
@@ -72,14 +59,15 @@
 							<tr><td>12:30 - 14:00 uur</td><td>Lunch en mini-excursie</td></tr>
 							<tr><td>14:00 - 17:00 uur</td><td>Instructie (nieuwe onderwerpen) en samen oefenen</td></tr>
 						</table></dd>
-					<dt>Thuis aan de slag</dt><dd>Wederom ga je thuis aan de slag met de opgaven en het oefenmateriaal dat je meekrijgt. Er is voor elke dag minimaal 2 uur aan oefenopgaven beschikbaar. Als je vragen hebt dan staan de assistenten voor je klaar op Google Hangout of Skype.</dd>
-					<dt>Derde bijeenkomst <small>dinsdag 13 augustus</small></dt><dd>Alle besproken onderwerpen worden nog een keer op een rijtje gezet. Er is een toets, om te kijken wat je niveau is geworden, en na afloop krijg je een certificaat.
+					<dt>Thuis aan de slag</dt><dd>Wederom ga je thuis aan de slag met de opgaven en het oefenmateriaal dat je meekrijgt.</dd>
+					<dt>Derde bijeenkomst <small>dinsdag 13 augustus</small></dt><dd>Alle besproken onderwerpen worden nog een keer op een rijtje gezet. Er is een toets om te kijken wat je niveau is geworden en na afloop krijg je een certificaat.
 						<table class="table table-condensed table-striped">
-							<tr><td>09:00 - 10:00 uur</td><td>Wat ging er goed, wat ging er minder</td></tr>
+							<tr><td>09:00 - 10:00 uur</td><td>Wat ging er goed, wat ging er minder?</td></tr>
 							<tr><td>10:00 - 12:00 uur</td><td>Extra uitleg op moeilijke onderwerpen</td></tr>
 							<tr><td>12:00 - 13:00 uur</td><td>Lunch</td></tr>
 							<tr><td>13:30 - 14:30 uur</td><td>Samen oefenen</td></tr>
 							<tr><td>14:30 - 15:30 uur</td><td>Eindtoets</td></tr>
+							<tr><td>15:30 - 16:00 uur</td><td>Afsluiting en uitreiking</td></tr>
 						</table></dd>
 				</dl>
 			</div>
@@ -121,87 +109,19 @@
 	</div>
 </div>
 
-<!--
-<div class="section">
+<div class="section material" id="subscribe">
 	<div class="container-narrow">
-	<div class="row-fluid card">
-	  <div class="span4">
-			Book
-		</div>
-	  <div class="span8">
-			Uitleg waarom, waar te kopen...
-		</div>
+	<div class="heading">
+    <h2 class="bigger">Inschrijven</h2>
+		<p>Inschrijven kan tot 15 juli. Na inschrijving wordt je op een wachtlijst gezet. We zullen handmatig studenten selecteren. Je ontvangt per mail of je bent geselecteerd of niet.</p>
+	</div>
+	<div class="card">
+	  <div class="info">
+		<?php if(Auth::instance()->logged_in()): ?>
+			<p>Je staat op de wachtlijst of bent al ingeschreven. <a href="<?php echo URL::site("user/logout") ?>">Log uit</a> om iemand anders in te schrijven.</p>
+			<p>Ga naar het <a href="<?php echo URL::site("user") ?>">dashboard</a>.</p>
+		<?php else: include("subscribe.php"); endif; ?>
+		</div>		
 	</div>
 	</div>
 </div>
-
-<div class="section material">
-	<div class="container-narrow">
-	<div class="row-fluid card">
-	  <div class="span4">
-	    <h4>Verhaal</h4>
-	    <p>
-				Verhaaltje over iets.
-			</p>
-		</div>
-
-	  <div class="span4">
-	    <h4>Ervaringen</h4>
-	    <blockquote>
-				<p>"Lang heb ik getwijfeld."</p>
-				<small>Persoontje A, <cite>student TW</cite></small>
-			</blockquote>
-	  </div>
-
-	  <div class="span4">
-	    <h3>Agenda</h3>
-			<div class="media">
-			  <a class="pull-left" href="#">
-			    <img class="media-object" data-src="holder.js/64x64">
-			  </a>
-			  <div class="media-body">
-			    <h4 class="media-heading">5 augustus</h4>
-			    Mogelijkheid 1
-			  </div>
-			</div>
-			<div class="media">
-			  <a class="pull-left" href="#">
-			    <img class="media-object" data-src="holder.js/64x64">
-			  </a>
-			  <div class="media-body">
-			    <h4 class="media-heading">9 augustus</h4>
-			    Mogelijkheid 2
-			  </div>
-			</div>
-			<div class="media">
-			  <a class="pull-left" href="#">
-			    <img class="media-object" data-src="holder.js/64x64">
-			  </a>
-			  <div class="media-body">
-			    <h4 class="media-heading">13 augustus</h4>
-			    Afsluitende dag
-			  </div>
-			</div>
-			<div class="media">
-			  <a class="pull-left" href="#">
-			    <img class="media-object" data-src="holder.js/64x64">
-			  </a>
-			  <div class="media-body">
-			    <h4 class="media-heading">16 augustus</h4>
-			    Begin Eerstejaarweekend en OWee
-			  </div>
-			</div>
-			<div class="media">
-			  <a class="pull-left" href="#">
-			    <img class="media-object" data-src="holder.js/64x64">
-			  </a>
-			  <div class="media-body">
-			    <h4 class="media-heading">2 september</h4>
-			    Eerste collegedag
-			  </div>
-			</div>
-	  </div>
-	</div>
-
-</div>
-</div>-->
