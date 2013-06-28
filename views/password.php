@@ -2,7 +2,7 @@
   <h2 class="form-signin-heading">Wachtwoord wijzigen</h2>
 	<?php
 		$flash = Session::instance()->get("flash", false);
-		if($flash && $flash['source'] == "password"){
+		if($flash && isset($flash['source']) && $flash['source'] == "password"){
 			echo "<div class='container-narrow'><div class='alert alert-$flash[type]'>$flash[message]</div></div>";
 			Session::instance()->delete("flash");
 		}	
