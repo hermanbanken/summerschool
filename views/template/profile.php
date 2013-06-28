@@ -11,5 +11,6 @@ if(count($meta) > 0){
 	foreach($meta as $key => $val) echo "<tr><th>".__("field.".$key)."</th><td>".htmlentities($val)."</td></tr>";
 }
 echo "<tr><th>Status</th><td>".__($user->state)."</td></tr>";
+echo "<tr><th>Wachtwoord</th><td><a class='btn' href='".URL::site("user/password")."'>Wijzig wachtwoord</a></td></tr>";
 echo "</table>";
 ?>

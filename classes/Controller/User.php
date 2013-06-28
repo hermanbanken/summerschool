@@ -118,6 +118,9 @@ class Controller_User extends Controller_Website {
 		return mail($to, $subject, $message, $headers);
 	}
 	
+	/**
+	 * Display a dashboard with your profile and all available exams and homework.
+	 */
 	public function action_index()
 	{
 		if(!Auth::instance()->logged_in()){
@@ -127,6 +130,9 @@ class Controller_User extends Controller_Website {
 		$this->template->content = View::factory("dashboard");
 	}
 	
+	/**
+	 * Display an exam and allow editing
+	 */
 	public function action_exam()
 	{
 		$id = $this->request->param("id");
@@ -146,7 +152,12 @@ class Controller_User extends Controller_Website {
 		}
 	}
 	
-	public function action_verify(){
+	/**
+	 * Users get a verification link after subscribing. 
+	 * This link will be verified using this action.
+	 */
+	public function action_verify()
+	{
 		$token = $this->request->query("token");
 
 		$user = ORM::factory("User")->where(DB::expr("MD5(CONCAT(id,username,password))"), "=", $token)->find();
@@ -166,7 +177,11 @@ class Controller_User extends Controller_Website {
 		$this->template->content = View::factory("dashboard");
 	}
 	
-	public function action_password(){
+	/**
+	 * Allow users to change their password
+	 */
+	public function action_password()
+	{
 		if(!Auth::instance()->logged_in()){
 			HTTP::redirect("user/login");
 		}
@@ -174,6 +189,18 @@ class Controller_User extends Controller_Website {
 		$this->template->content = View::factory("password");
 		if($this->request->method() == "POST" && $_POST['password'] === $_POST['password_confirm']){
 			try {
+				
+				// Validate current password
+				if(!Auth::instance()->check_password($_POST['old_password'])){
+					Session::instance()->set("flash", array(
+						"type"=>"error",
+						"source"=>"password",
+						"message"=>"Uw oude wachtwoord klopt niet."
+					));
+					return;
+				}
+				
+				// Update user
 				Auth::instance()->get_user()->update_user($_POST, array("password"));
 				Session::instance()->set("flash", array(
 					"type"=>"success",
@@ -181,13 +208,21 @@ class Controller_User extends Controller_Website {
 					"message"=>"Uw wachtwoord is gewijzigd."
 				));
 			} catch(ORM_Validation_Exception $e){
+				// Invalid password or wrong confirm
 				Session::instance()->set("flash", array(
 					"type"=>"error",
 					"source"=>"password",
 					"message"=>"Het wachtwoord is niet voldoende complex. Gebruik minimaal 8 karakters."
 				));
 			}
+		} elseif($_POST['password'] !== $_POST['password_confirm']) {
+			Session::instance()->set("flash", array(
+				"type"=>"error",
+				"source"=>"password",
+				"message"=>"De wachtwoorden komen niet overeen."
+			));
 		}
+		
 	}
 
 } // End

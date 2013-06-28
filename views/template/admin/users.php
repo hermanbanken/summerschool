@@ -1,3 +1,5 @@
+<h2>Profiel</h2>
+<a class="btn" href="<?php echo URL::site("user/password") ?>">Wijzig wachtwoord</a>
 <h2>Deelnemers</h2>
 <table class="table table-bordered table-striped table-hover" style="background:white">
 	<thead>
