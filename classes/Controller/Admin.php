@@ -69,13 +69,13 @@ class Controller_Admin extends Controller_Website {
 			->bind('exam', $exam)
 			->bind("questions", $questions);
 		
-		$exam = ORM::factory("exam", $id);
+		$exam = ORM::factory("Exam", $id);
 		
 		if($this->request->method() == "POST")
 		{
 			$a = $this->request->post("answer");
 			foreach($this->request->post("question") as $qid => $text){
-				$question = ORM::factory("question")
+				$question = ORM::factory("Question")
 					->where("exam", "=", $exam->id)
 					->where("id", "=", $qid)
 					->find()
