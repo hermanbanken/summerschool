@@ -1,4 +1,17 @@
-<form method="post" class="exam">
+<?php
+function formatQuestion($text, $id){
+	$text = preg_replace(array(
+		"/\r?\n\r?\n\r?/",
+		"/\n(([a-z])\.? ([^\n]+)\n){1,3}([a-z])\.? ([^\n]+)/",
+		"/^([a-z])\.? ([^\n]+)$/m",
+	), array(
+		"<br/>\n",
+		"<div class='multiplechoice'>$0</div>",
+		"<label class='inline radio multiplechoice'><span>$1<input type='radio' value='$1' name='answer[$id]'></span>. <span>$2</span></label>",
+	), $text);
+	return $text;
+}
+?><form method="post" class="exam">
 <div name="top" class="container-fluid">
   <div class="row-fluid">
     <div class="span2">
@@ -15,17 +28,17 @@
 				</ul>
 			</div>
     </div>
-    <div class="span6">
+    <div class="span7">
 			<div class="well">
 				<h3>Vragen</h3>
 				<ol>
 				<?php foreach($questions as $question): ?>
-					<li name="q-<?php echo $question->id ?>"><?php echo $question->question ?></li>
+					<li name="q-<?php echo $question->id ?>"><?php echo formatQuestion($question->question, $question->id) ?></li>
 				<?php endforeach; ?>
 				</ol>
 			</div>
 		</div>
-		<div class="span4">
+		<div class="span3">
 			<div class="well">
 				<h3>Hoe te antwoorden</h3>
 				<p>Als er gevraagd wordt om een formule in te voeren dan kan je gebruik maken van "LaTeX". Hieronder staan wat voorbeelden van veelvoorkomende elementen:</p>

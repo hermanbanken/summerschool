@@ -6,6 +6,8 @@
 	<?php
 	$users = ORM::factory("User")->with("usermeta")->find_all();
 	foreach($users as $u){
+		if($u->has("roles", 2)) continue;
+		
 		$default = array("phone", "education", "snumber", "preeducation", "grade", "comments");
 		$meta = array_merge(
 			array_combine($default, array_fill(0, count($default), "")), 

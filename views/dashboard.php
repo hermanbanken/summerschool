@@ -24,7 +24,7 @@
 			<?php
 			echo "<table class='table table-striped table-hover table-bordered' style='width:auto; background:white;'>";
 			$toetsen = ORM::factory('Exam')->find_all();
-			if(false && $toetsen->count())
+			if($toetsen->count())
 			foreach($toetsen as $toets){
 				echo "<tr><td>$toets->name</td><td><a href='".URL::site("user/exam/$toets->id")."'>Maak online</a></td><td><a href='".URL::site($toets->pdf)."' title='download'>PDF</a></td></tr>";
 			} else {
