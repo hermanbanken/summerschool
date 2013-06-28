@@ -173,6 +173,7 @@ class Controller_User extends Controller_Website {
 	/**
 	 * Users get a verification link after subscribing. 
 	 * This link will be verified using this action.
+	 * @TODO: force login user
 	 */
 	public function action_verify()
 	{
@@ -180,6 +181,9 @@ class Controller_User extends Controller_Website {
 
 		$user = ORM::factory("User")->where(DB::expr("MD5(CONCAT(id,username,password))"), "=", $token)->find();
 		if($user->loaded() && !$user->has("roles", 1)){
+			// Login user
+			Auth::instance()->force_login($user, true);
+			
 			$user->add("roles", 1);
 			Session::instance()->set("flash", array(
 				"type"=>"success",
@@ -192,7 +196,7 @@ class Controller_User extends Controller_Website {
 			));
 		}
 		
-		$this->template->content = View::factory("dashboard");
+		$this->template->content = View::factory("welcome");
 	}
 	
 	/**
@@ -233,7 +237,7 @@ class Controller_User extends Controller_Website {
 					"message"=>"Het wachtwoord is niet voldoende complex. Gebruik minimaal 8 karakters."
 				));
 			}
-		} elseif($_POST['password'] !== $_POST['password_confirm']) {
+		} elseif($this->request->post("password") !== $this->request->post('password_confirm')) {
 			Session::instance()->set("flash", array(
 				"type"=>"error",
 				"source"=>"password",
