@@ -63,13 +63,14 @@ class Controller_User extends Controller_Website {
 					$m->save();
 				}
 
-				$this->send_pass($user, "Beste ".$user->username.",\n\n U heeft u ingeschreven voor de wachtlijst van de Wiskunde-B Summerschool van de faculteit EWI. Uw gebruikersnaam is uw emailadres en uw wachtwoord is \"$pass\".\n\nMet vriendelijke groet,\nHerman Banken", $pass);
+				$token = md5($user->id.$user->username.$user->password);
+				$this->send_pass($user, "Beste ".$user->username.",\n\n U heeft u ingeschreven voor de wachtlijst van de Wiskunde-B Summerschool van de faculteit EWI. Uw gebruikersnaam is uw emailadres en uw tijdelijke wachtwoord is \"$pass\". Verifieer uw account via deze link: ".URL::site("user/verify?token=$token", true).".\n\nMet vriendelijke groet,\nHerman Banken", $pass);
 				Auth::instance()->force_login($user, false);
 
 				Session::instance()->set("flash", array(
 					"type"=>"success", 
-					"message"=>"Uw account is aangemaakt en u bent nu automatisch ingelogd. Op uw emailadres ontvangt u uw logingegevens."
-				));					
+					"message"=>"Uw account is aangemaakt en u bent nu automatisch ingelogd. Op uw emailadres ontvangt u een verificatielink en een tijdelijk wachtwoord. Verifieer uw emailadres om in te kunnen loggen."
+				));
 				HTTP::redirect("user");
 				
 			} catch(ORM_Validation_Exception $e){
@@ -142,6 +143,50 @@ class Controller_User extends Controller_Website {
 		
 		if($this->request->method() == "POST"){
 			
+		}
+	}
+	
+	public function action_verify(){
+		$token = $this->request->query("token");
+
+		$user = ORM::factory("User")->where(DB::expr("MD5(CONCAT(id,username,password))"), "=", $token)->find();
+		if($user->loaded() && !$user->has("roles", 1)){
+			$user->add("roles", 1);
+			Session::instance()->set("flash", array(
+				"type"=>"success",
+				"message"=>"Uw account is geverifieerd. <a href='".URL::site("user/password")."'>Wijzig uw wachtwoord</a>."
+			));
+		} else {
+			Session::instance()->set("flash", array(
+				"type"=>"error",
+				"message"=>"Uw account is al geverifieerd of de code klopt niet."
+			));
+		}
+		
+		$this->template->content = View::factory("dashboard");
+	}
+	
+	public function action_password(){
+		if(!Auth::instance()->logged_in()){
+			HTTP::redirect("user/login");
+		}
+		
+		$this->template->content = View::factory("password");
+		if($this->request->method() == "POST" && $_POST['password'] === $_POST['password_confirm']){
+			try {
+				Auth::instance()->get_user()->update_user($_POST, array("password"));
+				Session::instance()->set("flash", array(
+					"type"=>"success",
+					"source"=>"password",
+					"message"=>"Uw wachtwoord is gewijzigd."
+				));
+			} catch(ORM_Validation_Exception $e){
+				Session::instance()->set("flash", array(
+					"type"=>"error",
+					"source"=>"password",
+					"message"=>"Het wachtwoord is niet voldoende complex. Gebruik minimaal 8 karakters."
+				));
+			}
 		}
 	}
 
