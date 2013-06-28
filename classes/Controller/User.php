@@ -142,14 +142,32 @@ class Controller_User extends Controller_Website {
 			exit;
 		}
 		
-		$this->template->content = View::factory("exam")->bind('exam', $exam)->bind("questions", $questions);
+		$user = Auth::instance()->get_user();
+		$this->template->content = View::factory("exam")
+			->bind('exam', $exam)
+			->bind("questions", $questions);
 		
 		$exam = ORM::factory("Exam", $id);
 		$questions = $exam->questions->find_all();
 		
 		if($this->request->method() == "POST"){
-			
+			$answers = $this->request->post("answer");
+			foreach($answers as $aid => $a){
+				$answer = ORM::factory("Answer")
+					->where("user", "=", $user->id)
+					->where("question", "=", $aid)
+					->find();
+				
+				$answer
+					->set("user", $user)
+					->set("question", $aid)
+					->set("answer", $a)
+					->save();
+			}
 		}
+		
+
+		$this->template->content->set("answers", ORM::factory("Answer")->where("user", "=", $user->id)->find_all());
 	}
 	
 	/**

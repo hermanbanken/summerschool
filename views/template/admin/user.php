@@ -76,6 +76,6 @@
   </div>
 	<div class="form-actions">
 	  <button type="submit" class="btn btn-primary">Aanpassen</button>
-	  <a class="btn" href="<?php echo URL::site() ?>">Annuleren</a>
+	  <a class="btn" href="<?php echo URL::site("user") ?>">Annuleren</a>
 	</div>
 </form>

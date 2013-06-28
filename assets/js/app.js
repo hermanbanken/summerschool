@@ -84,4 +84,13 @@ $(function(){
 		var l = $(this).find(".span");
 		l.addClass("span"+Math.floor(12/l.size()));
 	});
+	if(typeof yourAnswers != "undefined"){
+		$.each(yourAnswers, function(question, answer){
+			var input = $(document.getElementsByName("answer["+question+"]"));
+			if(input.attr('type') == "radio")
+				input.filter("[value="+answer+"]").click();
+			else
+				input.attr('value', answer);
+		});
+	}
 });

@@ -59,6 +59,11 @@ function formatQuestion($text, $id){
   </div>
 </div>
 </form>
+<?php
+echo "<script>"; 
+echo "var yourAnswers = ".json_encode($answers->as_array("question", "answer"));
+echo "</script>";
+?>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
