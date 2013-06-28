@@ -19,16 +19,16 @@
 	<div class="container-narrow">
 	<div class="heading">
     <h2 class="bigger">Waarom</h2>
-    <p>Je hebt je examen gehaald, waarom zou je nog naar de Wiskunde-B summerschool komen?</p>
+    <p>Je hebt je examen gehaald, waarom zou je nog naar de Wiskunde-B Summerschool komen?</p>
   </div>
 	<div class="card">
 	  <div class="info">
 			<canvas class='right' width="200" height="200" id="pieChartCanvas">Je browser ondersteunt geen 'canvas'. Slechts 40% van de studenten haalt Analyse 1 (Wiskunde) de eerste keer.</canvas>
-			<ol><li>Slechts de helft van de studenten die geen summerschool gevolgd hebben haalt de wiskunde vakken de eerste keer.</li>
+			<ol><li>Slechts de helft van de studenten die geen Summerschool gevolgd hebben haalt de wiskunde vakken de eerste keer.</li>
 			<li>Huidige studenten geven aan dat ze zich op de middelbare school niet voldoende hebben voorbereid op universitaire wiskunde.</li>
 			<li>Wiskunde vormt een belangrijk onderdeel van je opleiding en ligt aan het fundament van bijna elk vak.</li>
-			<li>Beginnen met een vliegende start zorgt er voor dat je zometeen in september niet meteen achter loopt en daardoor in de problemen komt.</li></ol>
-			<p>Op de middelbare school heb je trucjes geleerd om sommen op te lossen. Tijdens de summerschool leer je hoe wiskunde werkt.</p>
+			<li>Beginnen met een vliegende start zorgt er voor dat je in september niet meteen achter loopt en daardoor in de problemen komt.</li></ol>
+			<p>Op de middelbare school heb je trucjes geleerd om sommen op te lossen. Tijdens de Summerschool leer je hoe wiskunde werkt.</p>
 		</div>
 	</div>
 	</div>
@@ -38,12 +38,12 @@
 	<div class="container-narrow">
 		<div class="heading">
 	    <h2 class="bigger">Programma</h2>
-	    <p>Hoe ziet de summerschool er uit?</p>
+	    <p>Hoe ziet de Wiskunde-B Summerschool er uit?</p>
 	  </div>
 	<div class="row-fluid card">
 	  <div class="span12">
 			<div class="info">
-				<p>De summerschool bestaat uit drie bijeenkomsten en tussendoor online hulp van dezelfde assistenten die bij de bijeenkomsten aanwezig zijn. Op die manier hoef je niet elke dag op en neer naar Delft.</p>
+				<p>De Summerschool bestaat uit drie bijeenkomsten en tussendoor online hulp van dezelfde assistenten die bij de bijeenkomsten aanwezig zijn. Op die manier hoef je niet elke dag op en neer naar Delft.</p>
 				<br><div id="timeline" width="100%" height="20"></div>
 				<dl>
 					<dt>Eerste bijeenkomst <small>maandag 5 augustus</small></dt><dd>Tijdens de eerste bijeenkomst krijg je het materiaal dat je nodig hebt uitgereikt. Daarna word je in groepjes van 5 a 6 studenten ingedeeld. Het programma van de dag is als volgt: 
@@ -87,10 +87,10 @@
 	  <div class="info">
 			<img class='right' width="200" height="300" />
 			<p>Deelname is aanbevolen voor alle studenten die een 7 of lager hadden voor hun centraal examen Wiskunde-B. Heb je nooit Wiskunde-B examen gemaakt dan kan je <a href="http://www.examenblad.nl/9336000/1/j9vvhinitagymgn_m7mvi7dmy3fq6u9_n11vg41h1h4i9qe/vhi1nc4phqyw?topparent=vg41h1h4i9qe">hier</a> een examen vinden om jezelf te testen.</p>
-			<p>De kosten van de summerschool bedragen &euro; <?php echo $costs; ?>. Dit is inclusief de boeken, lunch en koffie en thee. Wanneer je geselecteerd bent ontvang je meer informatie over hoe je kan betalen.</p>
+			<p>De kosten van de Summerschool bedragen &euro; <?php echo $costs; ?>. Dit is inclusief de boeken, lunch en koffie en thee. Wanneer je geselecteerd bent ontvang je meer informatie over hoe je kan betalen.</p>
 			<p>Je wordt voor aanvang van elke bijeenkomst verwacht op de <a href="https://maps.google.nl/maps?q=Mekelweg+4,+Delft&hl=nl&ll=51.999081,4.374074&spn=0.001166,0.002822&sll=51.999183,4.373009&sspn=0.00469,0.011287&hnear=Mekelweg+4,+2628+CD+Delft,+Zuid-Holland&t=m&z=19">faculteit EWI, Mekelweg 4</a>, bij de hoofdingang. De faculteit is goed bereikbaar vanaf station Delft met de bus. Parkeren is mogelijk op de Feldmannweg.</p>
-			<p>Tijdens de summerschool gebruiken we twee boeken. Om op het gewenste VWO niveau te komen gebruiken we het Basisboek Wiskunde. Voor de uitdagendere stof en sommen gebruiken we <a href="http://www.stewartcalculus.com/">Calculus van Stewart</a>, een begrip op de universiteit. Calculus heb je ook nodig voor de wiskunde vakken gedurende je eerste jaar.</p>
-			<p>In de kosten van de summerschool zijn de boeken inbegrepen. De boeken worden geleverd door de studievereniging W.I.S.V. "Christiaan Huygens". Vanaf de eerste week kan je hier ook alle andere boeken kopen van het actuele kwartaal. Studenten Elektrotechniek kunnen de boeken dan kopen bij de Elektrotechnische Vereniging. Beide studieverenigingen zijn gevestigd in de faculteit.</p>
+			<p>Tijdens de Summerschool gebruiken we twee boeken. Om op het gewenste VWO niveau te komen gebruiken we het Basisboek Wiskunde. Voor de uitdagendere stof en sommen gebruiken we <a href="http://www.stewartcalculus.com/">Calculus van Stewart</a>, een begrip op de universiteit. Calculus heb je ook nodig voor de wiskunde vakken gedurende je eerste jaar.</p>
+			<p>In de kosten van de Summerschool zijn de boeken inbegrepen. De boeken worden geleverd door de studievereniging W.I.S.V. "Christiaan Huygens". Vanaf de eerste week kan je hier ook alle andere boeken kopen van het actuele kwartaal. Studenten Electrical Engineering kunnen de boeken dan kopen bij de Elektrotechnische Vereniging. Beide studieverenigingen zijn gevestigd in de faculteit.</p>
 		</div>
 	</div>
 	</div>
