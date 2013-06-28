@@ -137,7 +137,7 @@ class Controller_User extends Controller_Website {
 		
 		$this->template->content = View::factory("exam")->bind('exam', $exam)->bind("questions", $questions);
 		
-		$exam = ORM::factory("exam", $id);
+		$exam = ORM::factory("Exam", $id);
 		$questions = $exam->questions->find_all();
 		
 		if($this->request->method() == "POST"){
