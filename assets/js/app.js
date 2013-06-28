@@ -80,8 +80,8 @@ $(function(){
 		r.text(460, 65, "September");
 	}
 	
-	$("div.multiplechoice").each(function(){
-		var l = $(this).find("label");
-		if(l.size() == 2) l.addClass("double");
+	$(".exam .row").each(function(){
+		var l = $(this).find(".span");
+		l.addClass("span"+Math.floor(12/l.size()));
 	});
 });

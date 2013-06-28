@@ -2,12 +2,16 @@
 function formatQuestion($text, $id){
 	$text = preg_replace(array(
 		"/\r?\n\r?\n\r?/",
-		"/\n(([a-z])\.? ([^\n]+)\n){1,3}([a-z])\.? ([^\n]+)/",
+		"/\n(([a-z])\.? ([^\n]+)\n)*([a-z])\.? ([^\n]+)/",
 		"/^([a-z])\.? ([^\n]+)$/m",
+		"/^/",
+		"/$/"
 	), array(
-		"<br/>\n",
-		"<div class='multiplechoice'>$0</div>",
-		"<label class='inline radio multiplechoice'><span>$1<input type='radio' value='$1' name='answer[$id]'></span>. <span>$2</span></label>",
+		"</p><p>\n",
+		"<div class='multiplechoice row'>$0</div>",
+		"<label class='inline span radio multiplechoice'><span>$1<input type='radio' value='$1' name='answer[$id]'></span>. <span>$2</span></label>",
+		"<p>",
+		"</p>",
 	), $text);
 	return $text;
 }
@@ -33,7 +37,7 @@ function formatQuestion($text, $id){
 				<h3>Vragen</h3>
 				<ol>
 				<?php foreach($questions as $question): ?>
-					<li name="q-<?php echo $question->id ?>"><?php echo formatQuestion($question->question, $question->id) ?></li>
+					<li class="container-fluid" name="q-<?php echo $question->id ?>"><?php echo formatQuestion($question->question, $question->id) ?></li>
 				<?php endforeach; ?>
 				</ol>
 			</div>

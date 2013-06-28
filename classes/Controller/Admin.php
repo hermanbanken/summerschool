@@ -55,5 +55,38 @@ class Controller_Admin extends Controller_Website {
 			}
 		}
 	}
+	
+	public function action_exam()
+	{
+		$id = $this->request->param("id");
+		
+		if(!Auth::instance()->logged_in('admin')){
+			HTTP::redirect("user/login");
+			exit;
+		}
+		
+		$this->template->content = View::factory("template/admin/exam")
+			->bind('exam', $exam)
+			->bind("questions", $questions);
+		
+		$exam = ORM::factory("exam", $id);
+		
+		if($this->request->method() == "POST")
+		{
+			$a = $this->request->post("answer");
+			foreach($this->request->post("question") as $qid => $text){
+				$question = ORM::factory("question")
+					->where("exam", "=", $exam->id)
+					->where("id", "=", $qid)
+					->find()
+					->values(array(
+						"question" => $text,
+						"validation" => $a[$qid]
+					))->set("exam", $exam)->save();
+			}
+		}
+		
+		$questions = $exam->questions->find_all();
+	}
 
 } // End

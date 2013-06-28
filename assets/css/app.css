@@ -94,21 +94,20 @@ textarea { box-sizing: border-box; border-radius: 0; box-shadow: inset 2px 2px 1
 .navbar form { margin: 0; }
 .navbar .nav > .active > a, .navbar .nav > li:hover > a { background: none; color: black; box-shadow: none; }
 .menu-padding { height: 50px; }
-.User .menu-padding { height: 70px; }
+.User .menu-padding, .Admin .menu-padding { height: 70px; }
 
-.User .exam .well { padding: 8px 20px; border-color: #bbb; }
-.User .exam .span2 .well .nav { margin: 0 -20px; }
+.exam .well { padding: 8px 20px; border-color: #bbb; }
+.exam .span2 .well .nav { margin: 0 -20px; }
 .exam ol.inline { margin-left: 0; }
 .exam ol.inline li { display: inline-block; width: 24%; padding: 10px; margin: 0; box-sizing: border-box; }
 .exam .MathJax { padding-left: 5px; }
-.User .exam label.multiplechoice { width: 24%; margin: 0; padding: 0; }
-.User .exam label.multiplechoice.double { width: 49%; margin: 0; padding: 0; }
+.exam .row { width: auto; margin-left: -20px; }
 .multiplechoice.radio input[type="radio"] { margin: 4px 10px 0 0;}
-.multiplechoice.radio + .multiplechoice.radio { margin: 0;}
+.exam .container-fluid::before, .exam .container-fluid::after { content: none; }
 
 .exam ul, .exam ol { margin-left: 20px; }
 .exam ol ol { list-style: lower-latin; margin-left: 20px; }
-.exam li { line-height: 30px; margin-bottom: 2px; }
+.exam li { margin-bottom: 2px; }
 .exam li input { margin-bottom: 0; }
 .exam li textarea { display: block; width: 100%; box-sizing: border-box; }
 
