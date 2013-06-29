@@ -21,7 +21,7 @@ class Model_Usermeta extends ORM {
 				if(!preg_match("/^(10|\d|\d.\d)$/", $value)) $object->error($model->key, "invalid number");
 			break;
 			case 'snumber':
-				if(!preg_match("/^[\d]{7,8}$/", $value)) $object->error($model->key, "invalid snumber");
+				if(!preg_match("/^$|^[\d]{7,8}$/", $value)) $object->error($model->key, "invalid snumber");
 			break;
 			case 'education':
 				if(!preg_match("/^(TI|EE|TW)$/", $value)) $object->error($model->key, "invalid education");
