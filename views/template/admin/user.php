@@ -74,6 +74,20 @@
       <textarea id="comments" name="meta[comments]" placeholder="Moeten we nog iets weten? Allergieen?" rows="3"><?php echo @htmlentities($user->meta('comments')); ?></textarea>
     </div>
   </div>
+  <div class="control-group">
+    <label class="control-label" for="state">Status</label>
+    <div class="controls">
+      <select name="state" id="state"><?php
+      	$select = array(
+					"interest" => "Wachtlijst", "paid" => "Betaald", "invited" => "Geselecteerd"
+				);
+				
+				$s = $user->state;
+				foreach($select as $key => $text)
+					echo "<option value=\"$key\" ".($s==$key ? 'selected':'').">$text</option>";
+      ?></select>
+    </div>
+  </div>
 	<div class="form-actions">
 	  <button type="submit" class="btn btn-primary">Aanpassen</button>
 	  <a class="btn" href="<?php echo URL::site("user") ?>">Annuleren</a>

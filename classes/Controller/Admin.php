@@ -38,7 +38,7 @@ class Controller_Admin extends Controller_Website {
 			if($this->request->method() == "POST")
 			{
 				try {
-					$user->values($_POST, array("email", "username"))->save();
+					$user->values($_POST, array("email", "username", "state"))->save();
 			
 					$meta_keys = array("phone", "education", "snumber", "preeducation", "grade", "comments");
 					$meta = $this->request->post("meta");

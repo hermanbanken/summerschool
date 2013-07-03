@@ -119,6 +119,56 @@ class Controller_User extends Controller_Website {
 	}
 	
 	/**
+	 * Display a cross table for each user and per question of each exam.
+	 */
+	public function action_crosstable(){
+		if(!Auth::instance()->logged_in("admin")){ exit; }
+		$id = $this->request->param("id");
+	
+		$crosstable = DB::select(
+			"users.username",
+			array("exams.name", "examname"),
+			array("questions.id", "question"),
+			array("users.id", "user"),
+			array("exams.id", "exam"),
+			array(DB::expr("IF(answers.answer LIKE questions.validation, 1, 0)"), "correct"),
+			array(DB::expr("IF(answers.answer IS NULL, 0, 1)"), "made")//,
+			//array("AVG(correct)")
+		)->from("questions")
+			->join("users", "CROSS")->on(DB::expr("1"), "=", DB::expr("1"))
+			->join("answers", "LEFT")->on("answers.question", "=", "questions.id")->on("answers.user", "=", "users.id")
+			->join("exams")->on("exams.id", "=", "questions.exam")
+			//->join("users", "OUTER")->on("answers.user", "=", "users.id")
+			//->group_by("exams.id")
+			->order_by("user")->order_by("question");
+	
+		if($id)
+		{
+			$v = View::factory("template/admin/examUserCrossTable");
+			$query = DB::select( 
+				"user", "question", "made", "correct", "username"
+			)->from(array($crosstable, "crosstable"))->where("exam", "=", $id);
+
+			$v->set("crosstable", $query->execute());
+			$this->template->content = $v;
+		}
+		else
+		{
+			$v = View::factory("template/admin/examSummary");
+			$query = DB::select( 
+				"exam", "question", "examname",
+				array(DB::expr("SUM(made)"), "made"), 
+				array(DB::expr("SUM(correct)"), "correct")
+			)
+				->from(array($crosstable, "crosstable"))
+				->group_by("exam")->group_by("question");
+
+			$v->set("crosstable", $query->execute());
+			$this->template = $v;
+		}
+	}
+	
+	/**
 	 * Display a dashboard with your profile and all available exams and homework.
 	 */
 	public function action_index()
