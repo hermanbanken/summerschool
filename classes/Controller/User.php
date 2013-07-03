@@ -138,6 +138,7 @@ class Controller_User extends Controller_Website {
 			->join("users", "CROSS")->on(DB::expr("1"), "=", DB::expr("1"))
 			->join("answers", "LEFT")->on("answers.question", "=", "questions.id")->on("answers.user", "=", "users.id")
 			->join("exams")->on("exams.id", "=", "questions.exam")
+			->where("users.state", "<>", "admin")
 			//->join("users", "OUTER")->on("answers.user", "=", "users.id")
 			//->group_by("exams.id")
 			->order_by("user")->order_by("question");
