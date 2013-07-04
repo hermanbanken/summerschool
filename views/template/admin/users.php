@@ -1,6 +1,6 @@
 <?php
 $users = ORM::factory("User")->where('state', '<>', 'admin')->with("usermeta")->find_all();
-$state = array("interest" => "Wachtlijst", "paid" => "Betaald", "invited" => "Geselecteerd");
+$state = array("interest" => "Wachtlijst", "paid" => "Betaald", "invited" => "Geselecteerd", "admin" => "Admin", "" => "-");
 ?><h2>Profiel</h2>
 <a class="btn" href="<?php echo URL::site("user/password") ?>">Wijzig wachtwoord</a>
 <h2>Deelnemers (<?php echo $users->count(); ?>)</h2>
