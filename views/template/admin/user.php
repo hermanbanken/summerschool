@@ -88,6 +88,12 @@
       ?></select>
     </div>
   </div>
+	<div class="control-group">
+    <label class="control-label" for="inputPass">Wachtwoord</label>
+    <div class="controls">
+      <input type="text" id="inputPass" name="password" placeholder="Leeg = niet wijzigen" value="">
+    </div>
+  </div>
 	<div class="form-actions">
 	  <button type="submit" class="btn btn-primary">Aanpassen</button>
 	  <a class="btn" href="<?php echo URL::site("user") ?>">Annuleren</a>

@@ -45,6 +45,11 @@ class Controller_Admin extends Controller_Website {
 					foreach($meta_keys as $key){
 						$user->meta($key, isset($meta[$key]) ? $meta[$key] : '');
 					}
+					
+					if(isset($_POST['password']) && !empty($_POST['password'])){
+						$user->values($_POST, array("password"))->save();
+					}
+					
 					Session::instance()->set("flash", array(
 						"type"=>"success", 
 						"message"=>"De gebruiker is succesvol gewijzigd."
