@@ -8,7 +8,7 @@
       <?php if(Auth::instance()->logged_in()): ?>
 				<a class="btn btn-large btn-success" href="<?php echo URL::site("user"); ?>">Dashboard</a>
 			<?php else: ?>
-				<a class="btn btn-large btn-success" href="#subscribe">Inschrijven<br><small style="font-size:.6em">deadline 15 juli</small></a>
+				<a class="btn btn-large btn-success" href="<?php echo URL::site("user"); ?>">Login</a>
 			<?php endif; ?>
 		</div>
 	</div>
@@ -107,7 +107,10 @@
 		<?php if(Auth::instance()->logged_in()): ?>
 			<p>Je staat op de wachtlijst of bent al ingeschreven. <a href="<?php echo URL::site("user/logout") ?>">Log uit</a> om iemand anders in te schrijven.</p>
 			<p>Ga naar het <a href="<?php echo URL::site("user") ?>">dashboard</a>.</p>
-		<?php else: include("subscribe.php"); endif; ?>
+		<?php 
+			else: //include("subscribe.php"); 
+				echo "<p>De inschrijvingen zijn gesloten.</p>";
+			endif; ?>
 		</div>		
 	</div>
 	</div>
